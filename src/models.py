@@ -17,3 +17,18 @@ class User(db.Model):
             "email": self.email,
             # do not serialize the password, its a security breach
         }
+
+class Characters(db.Model):
+    __tablename__ = 'characters'
+   
+    charId = db.Column(db.Integer, primary_key=True)
+    charName = db.Column(db.String(250))
+    charDescription = db.Column(db.String(2500))
+    charOrigin = db.Column(db.String(250))
+
+class Planets(db.Model):
+    __tablename__ = 'planets'
+
+    planetId = db.Column (db.Integer, primary_key=True)
+    planetName = db.Column (db.String(250))
+    planetDescription = db.Column (db.String (2500))
